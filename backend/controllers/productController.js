@@ -1,31 +1,38 @@
-const mongoose = require("mongoose");
+const Product = require("../models/Product");
 
-const productSchema = new mongoose.Schema(
-  {
-    name: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-    },
-    price: {
-      type: Number,
-      required: true,
-    },
-    image: {
-      type: String,
-    },
-    category: {
-      type: String,
-      default: "perfume",
-    },
-    featured: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  { timestamps: true }
-);
+// GET all products
+const getProducts = async (req, res) => {
+  try {
+    const products = await Product.find();
+    res.json(products);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 
-module.exports = mongoose.model("Product", productSchema);
+// CREATE product
+const createProduct = async (req, res) => {
+  try {
+    const product = new Product(req.body);
+    const savedProduct = await product.save();
+    res.status(201).json(savedProduct);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// DELETE product
+const deleteProduct = async (req, res) => {
+  try {
+    await Product.findByIdAndDelete(req.params.id);
+    res.json({ message: "Product deleted" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = {
+  getProducts,
+  createProduct,
+  deleteProduct,
+};
