@@ -1,0 +1,45 @@
+body {
+  font-family: Arial;
+  background: #111;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: gold;
+}
+
+.form, .products {
+  background: #1c1c1c;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+button {
+  padding: 10px 15px;
+  background: gold;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.product {
+  background: #2a2a2a;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Noir Perfume House - Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>🖤 Noir Perfume House Admin</h1>
+
+    <!-- ADD PRODUCT FORM -->
+    <div class="form">
+      <h2>Add New Product</h2>
+
+      <input type="text" id="name" placeholder="Product Name" />
+      <input type="text" id="description" placeholder="Description" />
+      <input type="number" id="price" placeholder="Price" />
+      <input type="text" id="image" placeholder="Image URL" />
+
+      <button onclick="addProduct()">Add Product</button>
+    </div>
+
+    <!-- PRODUCT LIST -->
+    <div class="products">
+      <h2>Products</h2>
+      <div id="productList"></div>
+    </div>
+
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
