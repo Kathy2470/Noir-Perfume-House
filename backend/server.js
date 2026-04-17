@@ -16,6 +16,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const productRoutes = require("./routes/productRoutes");
+app.use("/api/products", productRoutes);
+
 // Test route
 app.get("/", (req, res) => {
   res.send("Noir Perfume House API is running 🚀");
