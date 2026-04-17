@@ -1,3 +1,4 @@
+const protect = require("../middleware/authMiddleware");
 const express = require("express");
 const router = express.Router();
 
@@ -7,6 +8,8 @@ const {
   deleteProduct,
   updateProduct,
 } = require("../controllers/productController");
+
+router.get("/", getProducts);
 
 router.get("/", getProducts);
 router.post("/", createProduct);
