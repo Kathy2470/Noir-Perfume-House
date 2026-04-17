@@ -16,12 +16,12 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use("/ap/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 
 const productRoutes = require("./routes/productRoutes");
 app.use("/api/products", productRoutes);
 
-// Test route
+// TEST ROUTE
 app.get("/", (req, res) => {
   res.send("Noir Perfume House API is running 🚀");
 });
