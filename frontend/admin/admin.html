@@ -2,20 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Noir Perfume House - Admin</title>
+  <title>Noir Perfume House Admin</title>
   <link rel="stylesheet" href="admin.css" />
 </head>
 <body>
 
-  <div class="container">
+<div class="dashboard">
 
-    <h1>🖤 Noir Perfume House Admin</h1>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>🖤 Noir Admin</h2>
+    <button onclick="showSection('add')">➕ Add Product</button>
+    <button onclick="showSection('list')">📦 Products</button>
+  </div>
 
-    <!-- ADD PRODUCT FORM -->
-    <div class="form">
-      <h2>Add New Product</h2>
+  <!-- MAIN CONTENT -->
+  <div class="main">
 
-      <input type="text" id="name" placeholder="Product Name" />
+    <!-- ADD PRODUCT -->
+    <div id="addSection" class="section">
+      <h1>Add Product</h1>
+
+      <input type="text" id="name" placeholder="Name" />
       <input type="text" id="description" placeholder="Description" />
       <input type="number" id="price" placeholder="Price" />
       <input type="text" id="image" placeholder="Image URL" />
@@ -24,13 +32,15 @@
     </div>
 
     <!-- PRODUCT LIST -->
-    <div class="products">
-      <h2>Products</h2>
+    <div id="listSection" class="section hidden">
+      <h1>Products</h1>
       <div id="productList"></div>
     </div>
 
   </div>
 
-  <script src="admin.js"></script>
+</div>
+
+<script src="admin.js"></script>
 </body>
 </html>
